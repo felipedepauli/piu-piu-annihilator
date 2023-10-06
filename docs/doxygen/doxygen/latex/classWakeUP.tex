@@ -1,0 +1,113 @@
+\hypertarget{classWakeUP}{}\doxysection{Wake\+UP Class Reference}
+\label{classWakeUP}\index{WakeUP@{WakeUP}}
+
+
+Handle new connections.  
+
+
+
+
+{\ttfamily \#include $<$Wake\+UP.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWakeUP_acfad5351160daa2aee18ab2cde262a2d}{Wake\+UP}} (short port)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classWakeUP}{Wake\+UP}} server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWakeUP_a8129e96dbbe31c18a6cf40893b3368e9}{run}} ()
+\begin{DoxyCompactList}\small\item\em Runs the server, starting the event loop for incoming connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classWakeUP_a747c228c0f66a78e7bfbd8032ecd20d8}{listening}} ()
+\begin{DoxyCompactList}\small\item\em Starts an asynchronous operation to accept a new connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boost\+::asio\+::io\+\_\+context \mbox{\hyperlink{classWakeUP_a30d497901d6d1081baf8277f012a2695}{io\+\_\+context\+\_\+}}
+\item 
+tcp\+::acceptor \mbox{\hyperlink{classWakeUP_ab61b563f8765f5733b47b89bbb45a631}{acceptor\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Keeps the context of boost. It has the context and the object used to accept new connections. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ std\+::thread $>$ $>$ \mbox{\hyperlink{classWakeUP_adffcf31f8da4bb7f6c07373cdc089855}{session\+\_\+threads\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Object to accept new connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handle new connections. 
+
+This class is responsible for managing the server connections. It starts the server on the specified port and begins listening for new connections. When a new connection is accepted, a new session is created to handle the client-\/server interaction. Each session is run in its own thread to allow for multiple simultaneous connections. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWakeUP_acfad5351160daa2aee18ab2cde262a2d}\label{classWakeUP_acfad5351160daa2aee18ab2cde262a2d}} 
+\index{WakeUP@{WakeUP}!WakeUP@{WakeUP}}
+\index{WakeUP@{WakeUP}!WakeUP@{WakeUP}}
+\doxysubsubsection{\texorpdfstring{WakeUP()}{WakeUP()}}
+{\footnotesize\ttfamily Wake\+UP\+::\+Wake\+UP (\begin{DoxyParamCaption}\item[{short}]{port }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classWakeUP}{Wake\+UP}} server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port on which the server will run. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWakeUP_a747c228c0f66a78e7bfbd8032ecd20d8}\label{classWakeUP_a747c228c0f66a78e7bfbd8032ecd20d8}} 
+\index{WakeUP@{WakeUP}!listening@{listening}}
+\index{listening@{listening}!WakeUP@{WakeUP}}
+\doxysubsubsection{\texorpdfstring{listening()}{listening()}}
+{\footnotesize\ttfamily void Wake\+UP\+::listening (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Starts an asynchronous operation to accept a new connection. 
+
+\mbox{\Hypertarget{classWakeUP_a8129e96dbbe31c18a6cf40893b3368e9}\label{classWakeUP_a8129e96dbbe31c18a6cf40893b3368e9}} 
+\index{WakeUP@{WakeUP}!run@{run}}
+\index{run@{run}!WakeUP@{WakeUP}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Wake\+UP\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Runs the server, starting the event loop for incoming connections. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWakeUP_ab61b563f8765f5733b47b89bbb45a631}\label{classWakeUP_ab61b563f8765f5733b47b89bbb45a631}} 
+\index{WakeUP@{WakeUP}!acceptor\_@{acceptor\_}}
+\index{acceptor\_@{acceptor\_}!WakeUP@{WakeUP}}
+\doxysubsubsection{\texorpdfstring{acceptor\_}{acceptor\_}}
+{\footnotesize\ttfamily tcp\+::acceptor Wake\+UP\+::acceptor\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Keeps the context of boost. It has the context and the object used to accept new connections. 
+
+\mbox{\Hypertarget{classWakeUP_a30d497901d6d1081baf8277f012a2695}\label{classWakeUP_a30d497901d6d1081baf8277f012a2695}} 
+\index{WakeUP@{WakeUP}!io\_context\_@{io\_context\_}}
+\index{io\_context\_@{io\_context\_}!WakeUP@{WakeUP}}
+\doxysubsubsection{\texorpdfstring{io\_context\_}{io\_context\_}}
+{\footnotesize\ttfamily boost\+::asio\+::io\+\_\+context Wake\+UP\+::io\+\_\+context\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWakeUP_adffcf31f8da4bb7f6c07373cdc089855}\label{classWakeUP_adffcf31f8da4bb7f6c07373cdc089855}} 
+\index{WakeUP@{WakeUP}!session\_threads\_@{session\_threads\_}}
+\index{session\_threads\_@{session\_threads\_}!WakeUP@{WakeUP}}
+\doxysubsubsection{\texorpdfstring{session\_threads\_}{session\_threads\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$std\+::thread$>$ $>$ Wake\+UP\+::session\+\_\+threads\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Object to accept new connections. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Eys/\mbox{\hyperlink{WakeUP_8hpp}{Wake\+UP.\+hpp}}\item 
+src/\+Eys/\mbox{\hyperlink{WakeUP_8cpp}{Wake\+UP.\+cpp}}\end{DoxyCompactItemize}

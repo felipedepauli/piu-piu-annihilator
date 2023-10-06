@@ -1,0 +1,26 @@
+\hypertarget{Cortx_2Cortx_8cpp}{}\doxysection{src/\+Cortx/\+Cortx.cpp File Reference}
+\label{Cortx_2Cortx_8cpp}\index{src/Cortx/Cortx.cpp@{src/Cortx/Cortx.cpp}}
+
+
+Implementation of the \mbox{\hyperlink{classCortx}{Cortx}} class.  
+
+
+{\ttfamily \#include \char`\"{}Cortx.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$boost/asio.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgcodecs/imgcodecs.\+hpp$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \mbox{\hyperlink{classCortx}{Cortx}} class. 
+
+The \mbox{\hyperlink{classCortx}{Cortx}} class has three important attributes for the program\textquotesingle{}s operation\+:
+\begin{DoxyItemize}
+\item The IP address of the Eys server;
+\item The port used by the Eys server;
+\item The detector, an object of the Detector class, responsible for processing object detection (Computer Vision pipeline). To establish the TCP/\+IP connection with the server, the boost.\+beast library is used. 
+\end{DoxyItemize}

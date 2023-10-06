@@ -1,0 +1,19 @@
+graph TB
+  M["main.cpp"] -- "Includes" --> WUH["WakeUP.hpp"]
+  WUH -- "Implemented in" --> WUC["WakeUP.cpp"]
+  M -- "Instantiates and runs" --> WU["WakeUP class"]
+  WUH -- "Defines" --> WU
+  WUC -- "Implements" --> WU
+  WU -- "Runs server" --> L["Listening for connections"]
+  L -- "Accepts new connection" --> NS["New Session"]
+  NS -- "Starts session" --> ST["Session Thread"]
+  ST -- "Handles client-server interaction" --> E["End"]
+  linkStyle 0 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 1 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 2 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 3 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 4 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 5 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 6 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 7 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 8 stroke:#2ecd71,stroke-width:2px;

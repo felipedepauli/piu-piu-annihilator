@@ -1,0 +1,68 @@
+\hypertarget{main_8cpp}{}\doxysection{codes/\+Cortx/main.cpp File Reference}
+\label{main_8cpp}\index{codes/Cortx/main.cpp@{codes/Cortx/main.cpp}}
+
+
+The \mbox{\hyperlink{classCortx}{Cortx}}\textquotesingle{}s Main File.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Cortx.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$csignal$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_aa025f45ed88b3ae4067ae664cf12f853}{handle\+Signal}} (int signal)
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em The entry point of the program. The only objective here is to get the port number, instantiate the class \mbox{\hyperlink{classCortx}{Cortx}}, to keep it running and handle the signals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classCortx}{Cortx}}\textquotesingle{}s Main File. 
+
+This is the main entry point of the Cortex program. It processes the command line arguments, sets up signal handling, and runs the Cortex class. The Cortex class is responsible for the main logic of the program.
+
+Created by\+:
+\begin{DoxyItemize}
+\item Felipe Camargo de Pauli
+\item \href{mailto:fcdpauli@gmail.com}{\texttt{ fcdpauli@gmail.\+com}}
+\item 2023-\/04-\/15
+\end{DoxyItemize}
+
+This file is part of the Cortex project\+:
+\begin{DoxyItemize}
+\item Website\+: \href{http://www.aincrivelfabrica.com.br}{\texttt{ http\+://www.\+aincrivelfabrica.\+com.\+br}}
+\item Git\+Hub\+: \href{https://github.com/felipedepauli/evil-eyes}{\texttt{ https\+://github.\+com/felipedepauli/evil-\/eyes}}
+\end{DoxyItemize}
+
+License\+: Copyright (C) 2023 Felipe Camargo de Pauli All Rights Reserved.
+
+This source code is provided for viewing purposes only. No part of this source code may be used, modified, distributed, or sublicensed for any purpose without the express written consent of the copyright holder. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_aa025f45ed88b3ae4067ae664cf12f853}\label{main_8cpp_aa025f45ed88b3ae4067ae664cf12f853}} 
+\index{main.cpp@{main.cpp}!handleSignal@{handleSignal}}
+\index{handleSignal@{handleSignal}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{handleSignal()}{handleSignal()}}
+{\footnotesize\ttfamily void handle\+Signal (\begin{DoxyParamCaption}\item[{int}]{signal }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+The entry point of the program. The only objective here is to get the port number, instantiate the class \mbox{\hyperlink{classCortx}{Cortx}}, to keep it running and handle the signals. 
+
+This function is responsible for the initial setup of the Cortex program. It verifies the command-\/line arguments, handles the system signals, instantiates the \mbox{\hyperlink{classCortx}{Cortx}} class, and runs the main loop of the program. 
+\begin{DoxyParams}{Parameters}
+{\em argc} & The count of the command-\/line arguments. \\
+\hline
+{\em argv} & The array of the command-\/line arguments. The First argument is the IP and the second is the Port of the server. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the program ends successfully, 1 if the command-\/line arguments are incorrect. 
+\end{DoxyReturn}

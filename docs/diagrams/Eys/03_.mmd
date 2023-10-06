@@ -1,0 +1,15 @@
+graph TB
+  A["main"] -- "Checks if the port is provided" --> B["If yes"]
+  B -- "Instantiates the service" --> C["WakeUP sentinel"]
+  C -- "Runs the service" --> D["sentinel.run()"]
+  D -- "Outputs server start message" --> E["Server started on port"]
+  A -- "If no" --> F["Outputs error message"]
+  F -- "Returns 1" --> G["Program termination"]
+  E -- "Returns 0" --> G
+  linkStyle 0 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 1 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 2 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 3 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 4 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 5 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 6 stroke:#2ecd71,stroke-width:2px;

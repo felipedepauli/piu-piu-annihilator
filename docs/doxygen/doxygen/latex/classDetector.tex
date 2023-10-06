@@ -1,0 +1,166 @@
+\hypertarget{classDetector}{}\doxysection{Detector Class Reference}
+\label{classDetector}\index{Detector@{Detector}}
+
+
+This class is responsible for object detection in the input frames.  
+
+
+
+
+{\ttfamily \#include $<$Detector.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDetector_ad1d082fc2cb4855fa9e07253267025c1}{Detector}} (const std\+::string \&classes\+\_\+file, const std\+::string \&model\+\_\+configuration, const std\+::string \&model\+\_\+weights)
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classDetector}{Detector}} object. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classDetector_a38414f85898e4188c7d85e1657413469}{annotate\+\_\+frame}} (const cv\+::\+Mat \&frame)
+\begin{DoxyCompactList}\small\item\em Annotates the detected objects in the frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classDetector_a145235b570c6bba35ae82328378fa2fe}{labels}}
+\begin{DoxyCompactList}\small\item\em Labels for each possible class the model can predict. \end{DoxyCompactList}\item 
+cv\+::dnn\+::\+Net \mbox{\hyperlink{classDetector_a5f8f65fb21921573fd7ecb1bb69efa9e}{network}}
+\begin{DoxyCompactList}\small\item\em The Deep Neural Network (DNN) that will be used for detection. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDetector_ac252ee06c12269867746857db4215150}{probability\+\_\+minimum}}
+\begin{DoxyCompactList}\small\item\em The minimum probability to eliminate weak detections. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDetector_a6953acd07a28d13b25afb52df460d9c2}{threshold}}
+\begin{DoxyCompactList}\small\item\em Threshold for the non maximum suppression algorithm. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Scalar $>$ \mbox{\hyperlink{classDetector_aee9283d38c6551947287443892420bfb}{colors}}
+\begin{DoxyCompactList}\small\item\em Colors for the bounding boxes for each class. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classDetector_ab5375ec56389d98d5cb1cfde96612871}{blob}}
+\begin{DoxyCompactList}\small\item\em A blob from image to pass through the network for the detection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is responsible for object detection in the input frames. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDetector_ad1d082fc2cb4855fa9e07253267025c1}\label{classDetector_ad1d082fc2cb4855fa9e07253267025c1}} 
+\index{Detector@{Detector}!Detector@{Detector}}
+\index{Detector@{Detector}!Detector@{Detector}}
+\doxysubsubsection{\texorpdfstring{Detector()}{Detector()}}
+{\footnotesize\ttfamily Detector\+::\+Detector (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{labels\+\_\+,  }\item[{const std\+::string \&}]{yolo\+\_\+cfg,  }\item[{const std\+::string \&}]{yolo\+\_\+weights }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{classDetector}{Detector}} object. 
+
+Constructor for the \mbox{\hyperlink{classDetector}{Detector}} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em classes\+\_\+file} & Path to the file containing the names of the classes. \\
+\hline
+{\em model\+\_\+configuration} & Path to the file containing the model configuration. \\
+\hline
+{\em model\+\_\+weights} & Path to the file containing the model weights.\\
+\hline
+{\em labels\+\_\+} & -\/ Path to the file with the labels for the classes. \\
+\hline
+{\em yolo\+\_\+cfg} & -\/ Path to the Yolo configuration file. \\
+\hline
+{\em yolo\+\_\+weights} & -\/ Path to the Yolo weights file.\\
+\hline
+\end{DoxyParams}
+The constructor initializes the \mbox{\hyperlink{classDetector}{Detector}} with the provided labels, Yolo configuration, and Yolo weights. It also sets the minimum probability and threshold values, generates random colors for the labels, and loads the Yolo neural network with the given configuration and weights. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDetector_a38414f85898e4188c7d85e1657413469}\label{classDetector_a38414f85898e4188c7d85e1657413469}} 
+\index{Detector@{Detector}!annotate\_frame@{annotate\_frame}}
+\index{annotate\_frame@{annotate\_frame}!Detector@{Detector}}
+\doxysubsubsection{\texorpdfstring{annotate\_frame()}{annotate\_frame()}}
+{\footnotesize\ttfamily cv\+::\+Mat Detector\+::annotate\+\_\+frame (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{frame }\end{DoxyParamCaption})}
+
+
+
+Annotates the detected objects in the frame. 
+
+Annotate a frame with detected objects.
+
+This function runs the detection model on the frame and adds bounding boxes and class labels to the objects detected in the frame. 
+\begin{DoxyParams}{Parameters}
+{\em frame} & The input frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The annotated frame.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & -\/ Frame to be annotated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Annotated frame
+\end{DoxyReturn}
+This function takes an input frame, converts it into a blob to feed into the neural network, performs a forward-\/pass through the network, gets the output and for each detected object, draws bounding boxes and labels on the frame, and then returns the annotated frame. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDetector_ab5375ec56389d98d5cb1cfde96612871}\label{classDetector_ab5375ec56389d98d5cb1cfde96612871}} 
+\index{Detector@{Detector}!blob@{blob}}
+\index{blob@{blob}!Detector@{Detector}}
+\doxysubsubsection{\texorpdfstring{blob}{blob}}
+{\footnotesize\ttfamily cv\+::\+Mat Detector\+::blob\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A blob from image to pass through the network for the detection. 
+
+\mbox{\Hypertarget{classDetector_aee9283d38c6551947287443892420bfb}\label{classDetector_aee9283d38c6551947287443892420bfb}} 
+\index{Detector@{Detector}!colors@{colors}}
+\index{colors@{colors}!Detector@{Detector}}
+\doxysubsubsection{\texorpdfstring{colors}{colors}}
+{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Scalar$>$ Detector\+::colors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Colors for the bounding boxes for each class. 
+
+\mbox{\Hypertarget{classDetector_a145235b570c6bba35ae82328378fa2fe}\label{classDetector_a145235b570c6bba35ae82328378fa2fe}} 
+\index{Detector@{Detector}!labels@{labels}}
+\index{labels@{labels}!Detector@{Detector}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Detector\+::labels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Labels for each possible class the model can predict. 
+
+\mbox{\Hypertarget{classDetector_a5f8f65fb21921573fd7ecb1bb69efa9e}\label{classDetector_a5f8f65fb21921573fd7ecb1bb69efa9e}} 
+\index{Detector@{Detector}!network@{network}}
+\index{network@{network}!Detector@{Detector}}
+\doxysubsubsection{\texorpdfstring{network}{network}}
+{\footnotesize\ttfamily cv\+::dnn\+::\+Net Detector\+::network\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The Deep Neural Network (DNN) that will be used for detection. 
+
+\mbox{\Hypertarget{classDetector_ac252ee06c12269867746857db4215150}\label{classDetector_ac252ee06c12269867746857db4215150}} 
+\index{Detector@{Detector}!probability\_minimum@{probability\_minimum}}
+\index{probability\_minimum@{probability\_minimum}!Detector@{Detector}}
+\doxysubsubsection{\texorpdfstring{probability\_minimum}{probability\_minimum}}
+{\footnotesize\ttfamily double Detector\+::probability\+\_\+minimum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The minimum probability to eliminate weak detections. 
+
+\mbox{\Hypertarget{classDetector_a6953acd07a28d13b25afb52df460d9c2}\label{classDetector_a6953acd07a28d13b25afb52df460d9c2}} 
+\index{Detector@{Detector}!threshold@{threshold}}
+\index{threshold@{threshold}!Detector@{Detector}}
+\doxysubsubsection{\texorpdfstring{threshold}{threshold}}
+{\footnotesize\ttfamily double Detector\+::threshold\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Threshold for the non maximum suppression algorithm. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+codes/\+Cortx/\mbox{\hyperlink{Detector_8hpp}{Detector.\+hpp}}\item 
+codes/\+Cortx/\mbox{\hyperlink{Detector_8cpp}{Detector.\+cpp}}\end{DoxyCompactItemize}

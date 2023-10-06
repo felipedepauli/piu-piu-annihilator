@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  app:
+    container_name: sentinel_frontal_lobe
+    user: "1000:1000"
+    restart: always
+    build: 
+      context: FrontalLobe
+      dockerfile: Dockerfile
+    volumes:
+      - ./Memory/storage/faces_bd:/app/faces_bd
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db-data:

@@ -1,0 +1,17 @@
+main.\+cpp Este é o arquivo principal do servidor. Ele verifica se a porta é fornecida e, se sim, instancia o serviço e o executa. Se a porta não for fornecida, o programa retorna um erro e termina. O servidor é iniciado na porta fornecida e, em caso de exceção, a mensagem de erro é impressa no console.
+
+\mbox{\hyperlink{WakeUP_8hpp}{Wake\+UP.\+hpp}} O código é uma implementação de um servidor TCP assíncrono usando a biblioteca Boost.\+Asio em C++. A classe \mbox{\hyperlink{classWakeUP}{Wake\+UP}} gerencia as conexões do servidor. Ela inicia o servidor na porta especificada e começa a ouvir por novas conexões. Quando uma nova conexão é aceita, uma nova sessão é criada para lidar com a interação cliente-\/servidor. Cada sessão é executada em sua própria thread para permitir múltiplas conexões simultâneas.\hypertarget{md_src_Eys_README_autotoc_md0}{}\doxysubsection{Wake\+UP.\+cpp}\label{md_src_Eys_README_autotoc_md0}
+\begin{quote}
+Este é o arquivo de implementação da classe \mbox{\hyperlink{classWakeUP}{Wake\+UP}}. O construtor \mbox{\hyperlink{classWakeUP}{Wake\+UP}} inicializa o objeto acceptor\+\_\+ com o contexto io e o endpoint do servidor. O método run() executa o contexto io, iniciando o loop de eventos. O método listening() inicia uma operação assíncrona para aceitar uma nova conexão. Quando uma nova conexão é aceita, uma nova sessão é criada e iniciada em um novo thread. Se ocorrer um erro ao aceitar a nova conexão, uma mensagem de erro é impressa no console. \end{quote}
+O código fornecido é uma implementação de um servidor TCP assíncrono usando a biblioteca Boost.\+Asio em C++. A biblioteca Boost.\+Asio fornece uma base para a programação de I/O assíncrono usando o modelo de programação baseado em proactor.
+
+A classe \mbox{\hyperlink{classWakeUP}{Wake\+UP}} é o núcleo do servidor. Ela inicia o servidor na porta especificada e começa a ouvir por novas conexões. Quando uma nova conexão é aceita, uma nova sessão é criada para lidar com a interação cliente-\/servidor. Cada sessão é executada em sua própria thread para permitir múltiplas conexões simultâneas.
+
+O método \mbox{\hyperlink{classWakeUP_a747c228c0f66a78e7bfbd8032ecd20d8}{Wake\+UP\+::listening()}} inicia uma operação assíncrona para aceitar uma nova conexão. Quando uma nova conexão é aceita, uma nova sessão é criada e uma nova thread é iniciada para lidar com a interação cliente-\/servidor. Se ocorrer um erro ao aceitar uma nova conexão, uma mensagem de erro é exibida e o servidor volta a ouvir por novas conexões.
+
+O método \mbox{\hyperlink{classWakeUP_a8129e96dbbe31c18a6cf40893b3368e9}{Wake\+UP\+::run()}} inicia o loop de eventos para conexões de entrada. Este loop de eventos é responsável por processar todas as operações de I/O assíncronas que foram iniciadas.
+
+Em resumo, este código é uma implementação eficiente e escalável de um servidor TCP assíncrono que pode lidar com múltiplas conexões simultâneas.
+
+\DoxyHorRuler{0}
+ 

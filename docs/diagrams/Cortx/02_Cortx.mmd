@@ -1,0 +1,17 @@
+graph TB
+  A[Início] --> B[Carregar Banco de Dados]
+  B --> C[Detectar Rostos no Quadro]
+  C --> D[Analisar Quadro]
+  D --> E[Desenhar Retângulo em torno do Rosto Detectado]
+  E --> F[Escrever Nome Abaixo de Cada Rosto]
+  F --> G[Verificar se o Arquivo 'synapse' Existe]
+  G --> H[Escrever ID da Pessoa Identificada no Arquivo 'synapse']
+  H --> I[Fim]
+  linkStyle 0 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 1 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 2 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 3 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 4 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 5 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 6 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 7 stroke:#2ecd71,stroke-width:2px;

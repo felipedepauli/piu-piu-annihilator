@@ -1,0 +1,23 @@
+graph TB
+  A[Import Libraries] --> B[Setup Express App and Enable CORS]
+  B --> C[Connect to MongoDB]
+  C --> D[Setup Express to Use JSON and API Routes]
+  D --> E[Start API Server]
+  E --> F[Create HTTP and WebSocket Servers]
+  F --> G[Handle Web Client Connection]
+  F --> H[Handle Python Client Connection]
+  H --> I[Handle Message from Python Client]
+  H --> J[Handle Python Client Disconnection]
+  F --> K[Handle Upgrade of Requests for Different Paths]
+  K --> L[Start Listening on Specified Port]
+  linkStyle 0 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 1 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 2 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 3 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 4 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 5 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 6 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 7 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 8 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 9 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 10 stroke:#2ecd71,stroke-width:2px;

@@ -1,0 +1,141 @@
+\hypertarget{classSession}{}\doxysection{Session Class Reference}
+\label{classSession}\index{Session@{Session}}
+
+
+Represents a session between the server and a client.  
+
+
+
+
+{\ttfamily \#include $<$Session.\+hpp$>$}
+
+Inheritance diagram for Session\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSession}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSession_a88d71461f1203f0ae3d1eece46c9466c}{Session}} (boost\+::asio\+::ip\+::tcp\+::socket socket)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classSession}{Session}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSession_a8753bb9dee966b7d39abc9b7237cd665}{$\sim$\+Session}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classSession}{Session}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSession_a47baf956cead0046fcbac45c572c70d3}{start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSession_a8d2d2500e4c6d0fc102373b6009f7677}{send\+\_\+frame}} (const cv\+::\+Mat \&frame)
+\begin{DoxyCompactList}\small\item\em Sends a frame to the client. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSession_a73a7192e6e9a4b0cccacdae1c39fa098}{process}} ()
+\begin{DoxyCompactList}\small\item\em Processes the client\textquotesingle{}s requests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEys}{Eys}} \mbox{\hyperlink{classSession_a6531574bee77a8bf2bd547c1ec5e8065}{evil\+Eys\+\_\+}}
+\item 
+boost\+::asio\+::ip\+::tcp\+::socket \mbox{\hyperlink{classSession_aaa3ca1f897b73d5a80e178ae1bf06cb2}{socket\+\_\+}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classSession_a641cf5b20680d6a8c2977735e29ebdbf}{received\+\_\+header}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a session between the server and a client. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSession_a88d71461f1203f0ae3d1eece46c9466c}\label{classSession_a88d71461f1203f0ae3d1eece46c9466c}} 
+\index{Session@{Session}!Session@{Session}}
+\index{Session@{Session}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}}
+{\footnotesize\ttfamily Session\+::\+Session (\begin{DoxyParamCaption}\item[{boost\+::asio\+::ip\+::tcp\+::socket}]{socket }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classSession}{Session}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & The socket representing the client connection. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSession_a8753bb9dee966b7d39abc9b7237cd665}\label{classSession_a8753bb9dee966b7d39abc9b7237cd665}} 
+\index{Session@{Session}!````~Session@{$\sim$Session}}
+\index{````~Session@{$\sim$Session}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{$\sim$Session()}{~Session()}}
+{\footnotesize\ttfamily Session\+::$\sim$\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classSession}{Session}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSession_a73a7192e6e9a4b0cccacdae1c39fa098}\label{classSession_a73a7192e6e9a4b0cccacdae1c39fa098}} 
+\index{Session@{Session}!process@{process}}
+\index{process@{process}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily int Session\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes the client\textquotesingle{}s requests. 
+
+\begin{DoxyReturn}{Returns}
+The status of the process. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSession_a8d2d2500e4c6d0fc102373b6009f7677}\label{classSession_a8d2d2500e4c6d0fc102373b6009f7677}} 
+\index{Session@{Session}!send\_frame@{send\_frame}}
+\index{send\_frame@{send\_frame}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{send\_frame()}{send\_frame()}}
+{\footnotesize\ttfamily void Session\+::send\+\_\+frame (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sends a frame to the client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & The frame to be sent. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSession_a47baf956cead0046fcbac45c572c70d3}\label{classSession_a47baf956cead0046fcbac45c572c70d3}} 
+\index{Session@{Session}!start@{start}}
+\index{start@{start}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Session\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the session. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSession_a6531574bee77a8bf2bd547c1ec5e8065}\label{classSession_a6531574bee77a8bf2bd547c1ec5e8065}} 
+\index{Session@{Session}!evilEys\_@{evilEys\_}}
+\index{evilEys\_@{evilEys\_}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{evilEys\_}{evilEys\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEys}{Eys}} Session\+::evil\+Eys\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSession_a641cf5b20680d6a8c2977735e29ebdbf}\label{classSession_a641cf5b20680d6a8c2977735e29ebdbf}} 
+\index{Session@{Session}!received\_header@{received\_header}}
+\index{received\_header@{received\_header}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{received\_header}{received\_header}}
+{\footnotesize\ttfamily uint64\+\_\+t Session\+::received\+\_\+header\hspace{0.3cm}{\ttfamily [private]}}
+
+The received header from the client. \mbox{\Hypertarget{classSession_aaa3ca1f897b73d5a80e178ae1bf06cb2}\label{classSession_aaa3ca1f897b73d5a80e178ae1bf06cb2}} 
+\index{Session@{Session}!socket\_@{socket\_}}
+\index{socket\_@{socket\_}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{socket\_}{socket\_}}
+{\footnotesize\ttfamily boost\+::asio\+::ip\+::tcp\+::socket Session\+::socket\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+The socket representing the client connection. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Eys/\mbox{\hyperlink{Session_8hpp}{Session.\+hpp}}\item 
+src/\+Eys/\mbox{\hyperlink{Session_8cpp}{Session.\+cpp}}\end{DoxyCompactItemize}

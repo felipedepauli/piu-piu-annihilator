@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.program_logo {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.controller {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  background-color: rgb(254, 228, 228);
+}
+
+.controller__section {
+  text-align: center;;
+}
+
+.program_name {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0rem;
+}
+
+.program_desc__block   {
+  height: 100%;
+  font-size: 2rem;
+  color: lightslategray;
+  font-family: 'SaxMono', monospace;
+}
+.program_desc__block p  {
+  color: lightslategray;
+  font-family: monospace;
+  font-size: 10rem;
+  text-align: center;;
+}
+.main {
+  display: grid;
+  grid-template-areas:
+  "title title title title title"
+  "image image image desc desc"
+    "panel panel panel panel panel";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 4fr 2fr;
+    height: 100vh;
+  }
+  
+.main .program_name {
+    grid-area: title;
+    font-family: 'SaxMono', monospace;
+    font-weight: bold;
+}
+.main .program_image {
+  grid-area: image;
+  margin:30px;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .program_desc {
+  grid-area: desc;
+  padding: 30px;
+}
+.main .program_panel {
+  grid-area: panel;
+  display:  grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.controller__section--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.controller__section--right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.controller__section--right > div {
+  margin: 20px;
+}
+
+.controller__section--center__middle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+
+.controller__section--center__top,
+.controller__section--center__bottom {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.piupiu {
+  position: absolute;
+  top:0vh;
+  left: -30px;
+}

@@ -1,0 +1,33 @@
+\hypertarget{Session_8hpp_source}{}\doxysection{Session.\+hpp}
+\label{Session_8hpp_source}\index{src/Eys/Session.hpp@{src/Eys/Session.hpp}}
+\mbox{\hyperlink{Session_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <opencv2/highgui/highgui.hpp>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <opencv2/imgcodecs/imgcodecs.hpp>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Eys_8hpp}{./Eys.hpp}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{using\ }boost::asio::ip::tcp;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSession}{Session}}\ :\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<Session>\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classSession}{Session}}(boost::asio::ip::tcp::socket\ socket);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classSession_a8753bb9dee966b7d39abc9b7237cd665}{\string~Session}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSession_a47baf956cead0046fcbac45c572c70d3}{start}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSession_a8d2d2500e4c6d0fc102373b6009f7677}{send\_frame}}(\textcolor{keyword}{const}\ cv::Mat\&\ frame);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSession_a73a7192e6e9a4b0cccacdae1c39fa098}{process}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classEys}{Eys}}\ \mbox{\hyperlink{classSession_a6531574bee77a8bf2bd547c1ec5e8065}{evilEys\_}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ boost::asio::ip::tcp::socket\ \mbox{\hyperlink{classSession_aaa3ca1f897b73d5a80e178ae1bf06cb2}{socket\_}};\ \ }
+\DoxyCodeLine{00064\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{classSession_a641cf5b20680d6a8c2977735e29ebdbf}{received\_header}};\ \ }
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

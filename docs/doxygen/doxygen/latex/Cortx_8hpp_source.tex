@@ -1,0 +1,32 @@
+\hypertarget{Cortx_8hpp_source}{}\doxysection{Cortx.\+hpp}
+\label{Cortx_8hpp_source}\index{src/Cortx/Cortx.hpp@{src/Cortx/Cortx.hpp}}
+\mbox{\hyperlink{Cortx_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CORTX\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CORTX\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Processing/Detector.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ }boost::asio::ip::tcp;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{namespaceCortx}{Cortx}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{namespaceCortx}{Cortx}}(\textcolor{keyword}{const}\ std::string\&\ host,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port);}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCortx_acc68dca44493297afadfb4829658fcd4}{run}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classCortx_acb30d20c6eabe82f7a647b1c410f82d4}{host\_}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{classCortx_a3a8e937552b611196c267c0a32d1a622}{port\_}};}
+\DoxyCodeLine{00043\ \ \ \ \ Detector\ \mbox{\hyperlink{classCortx_a7139b9486ae35f41e156a428d09ef812}{detector\_}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCortx_a7b256218c319b0db2b1487f878d744d7}{connection}}(tcp::socket\&\ socket);}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CORTX\_H}}
+
+\end{DoxyCode}

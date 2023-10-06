@@ -1,0 +1,43 @@
+graph TB
+  A["Start"] --> B["Verifica número de argumentos"]
+  B -->|"3 argumentos"| C["Obtém IP e Porta"]
+  B -->|"Menos de 3 argumentos"| Z["Termina o programa"]
+  C --> D["Conecta ao servidor"]
+  D --> E["Inicia Detector"]
+  E --> F["Inicia loop infinito"]
+  F --> G["Conecta ao websocket"]
+  G --> H["Inicia detecção de pessoas"]
+  H --> I["Lê o cabeçalho"]
+  I -->|"Cabeçalho válido"| J["Lê o tamanho do frame"]
+  I -->|"Cabeçalho inválido"| H
+  J --> K["Lê os dados do frame"]
+  K -->|"Frame completo"| L["Converte dados em imagem"]
+  K -->|"Frame incompleto"| H
+  L --> M["Anota o frame"]
+  M -->|"Frame não vazio"| N["Codifica frame como JPG"]
+  M -->|"Frame vazio"| H
+  N -->|"Codificação bem-sucedida"| O["Envia resultado para o servidor Node.js via WebSocket"]
+  N -->|"Falha na codificação"| H
+  O --> H
+  Z --> X["Fim"]
+  linkStyle 0 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 1 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 2 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 3 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 4 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 5 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 6 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 7 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 8 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 9 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 10 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 11 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 12 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 13 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 14 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 15 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 16 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 17 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 18 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 19 stroke:#2ecd71,stroke-width:2px;
+  linkStyle 20 stroke:#2ecd71,stroke-width:2px;

@@ -1,0 +1,78 @@
+\hypertarget{WakeUP_8hpp_source}{}\doxysection{Wake\+UP.\+hpp}
+\label{WakeUP_8hpp_source}\index{src/Eys/WakeUP.hpp@{src/Eys/WakeUP.hpp}}
+\mbox{\hyperlink{WakeUP_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ WakeUP.hpp}}
+\DoxyCodeLine{00019\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Session_8hpp}{Session.hpp}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <opencv2/highgui/highgui.hpp>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <opencv2/imgcodecs/imgcodecs.hpp>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{using\ }boost::asio::ip::tcp;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWakeUP}{WakeUP}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classWakeUP}{WakeUP}}(\textcolor{keywordtype}{short}\ port);}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWakeUP_a8129e96dbbe31c18a6cf40893b3368e9}{run}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWakeUP_a747c228c0f66a78e7bfbd8032ecd20d8}{listening}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ boost::asio::io\_context\ \mbox{\hyperlink{classWakeUP_a30d497901d6d1081baf8277f012a2695}{io\_context\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ tcp::acceptor\ \mbox{\hyperlink{classWakeUP_ab61b563f8765f5733b47b89bbb45a631}{acceptor\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ std::vector<std::shared\_ptr<std::thread>>\ \mbox{\hyperlink{classWakeUP_adffcf31f8da4bb7f6c07373cdc089855}{session\_threads\_}};\ }
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ WakeUP.cpp}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WakeUP_8hpp}{WakeUP.hpp}}"{}}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \mbox{\hyperlink{classWakeUP_acfad5351160daa2aee18ab2cde262a2d}{WakeUP::WakeUP}}(\textcolor{keywordtype}{short}\ port)}
+\DoxyCodeLine{00072\ \ \ \ \ :\ acceptor\_(io\_context\_,\ boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(),\ port))\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[WakeUP::Info]\ Server\ started\ on\ port\ "{}}\ <<\ port\ <<\ std::endl;}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classWakeUP_a747c228c0f66a78e7bfbd8032ecd20d8}{listening}}();}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWakeUP_a8129e96dbbe31c18a6cf40893b3368e9}{WakeUP::run}}()\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classWakeUP_a30d497901d6d1081baf8277f012a2695}{io\_context\_}}.run();}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWakeUP_a747c228c0f66a78e7bfbd8032ecd20d8}{WakeUP::listening}}()```cpp}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Step\ 01.\ Initiate\ asynchronous\ accept\ operation.}}
+\DoxyCodeLine{00089\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[WakeUP::Info]\ Waiting\ for\ new\ connection"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00090\ \ \ \ \ acceptor\_.async\_accept(}
+\DoxyCodeLine{00091\ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ 02.\ Connection\ accepted\ handler.}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this}](boost::system::error\_code\ ec,\ boost::asio::ip::tcp::socket\ socket)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ec)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[WakeUP::Info]\ New\ connection\ accepted"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ 03.\ Create\ a\ new\ session\ and\ start\ it.}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ new\_session\ =\ std::make\_shared<Session>(std::move(socket));}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ 04.\ Create\ a\ new\ thread\ and\ associate\ new\_session-\/>start\ to\ it}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ session\_threads\_.push\_back(std::make\_shared<std::thread>([new\_session]()\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_session-\/>start();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[WakeUP::Info]\ Client\ disconnected"{}}<<\ std::endl;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (...)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[WakeUP::Error]\ Unknown\ exception\ occurred\ in\ session"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[WakeUP::Error]\ Error\ accepting\ new\ connection:\ "{}}\ <<\ ec.message()\ <<\ std::endl;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ 05.\ After\ create\ or\ not\ a\ new\ session,\ it\ will\ return\ to\ initial\ listening\ state}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ listening();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00116\ \}}
+
+\end{DoxyCode}

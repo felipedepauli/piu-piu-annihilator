@@ -1,0 +1,111 @@
+\hypertarget{classEys}{}\doxysection{Eys Class Reference}
+\label{classEys}\index{Eys@{Eys}}
+
+
+Main class for the \mbox{\hyperlink{classEys}{Eys}} server.  
+
+
+
+
+{\ttfamily \#include $<$Eys.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEys_aa000c9e1fa94ba38ca460164fb1bcbbf}{Eys}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classEys}{Eys}} server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEys_a8f9603e8d964ae4846dd7c74f64e3777}{$\sim$\+Eys}} ()
+\item 
+int \mbox{\hyperlink{classEys_aab4c7ef002911be1ee543c640d492add}{open\+Eyes}} ()
+\begin{DoxyCompactList}\small\item\em Opens the camera device. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classEys_a02cd5e473585e7f593301dca36b0b2cc}{spark}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEys_a5e831433449367bf39321fe0e492fa07}{do\+\_\+accept}} ()
+\begin{DoxyCompactList}\small\item\em Starts an asynchronous operation to accept a new connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Video\+Capture \mbox{\hyperlink{classEys_a4c783f5df2082cb1d9ec9d4ab2eb4f2c}{cap}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main class for the \mbox{\hyperlink{classEys}{Eys}} server. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEys_aa000c9e1fa94ba38ca460164fb1bcbbf}\label{classEys_aa000c9e1fa94ba38ca460164fb1bcbbf}} 
+\index{Eys@{Eys}!Eys@{Eys}}
+\index{Eys@{Eys}!Eys@{Eys}}
+\doxysubsubsection{\texorpdfstring{Eys()}{Eys()}}
+{\footnotesize\ttfamily Eys\+::\+Eys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classEys}{Eys}} server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port on which the server will run. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEys_a8f9603e8d964ae4846dd7c74f64e3777}\label{classEys_a8f9603e8d964ae4846dd7c74f64e3777}} 
+\index{Eys@{Eys}!````~Eys@{$\sim$Eys}}
+\index{````~Eys@{$\sim$Eys}!Eys@{Eys}}
+\doxysubsubsection{\texorpdfstring{$\sim$Eys()}{~Eys()}}
+{\footnotesize\ttfamily Eys\+::$\sim$\+Eys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEys_a5e831433449367bf39321fe0e492fa07}\label{classEys_a5e831433449367bf39321fe0e492fa07}} 
+\index{Eys@{Eys}!do\_accept@{do\_accept}}
+\index{do\_accept@{do\_accept}!Eys@{Eys}}
+\doxysubsubsection{\texorpdfstring{do\_accept()}{do\_accept()}}
+{\footnotesize\ttfamily void Eys\+::do\+\_\+accept (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Starts an asynchronous operation to accept a new connection. 
+
+\mbox{\Hypertarget{classEys_aab4c7ef002911be1ee543c640d492add}\label{classEys_aab4c7ef002911be1ee543c640d492add}} 
+\index{Eys@{Eys}!openEyes@{openEyes}}
+\index{openEyes@{openEyes}!Eys@{Eys}}
+\doxysubsubsection{\texorpdfstring{openEyes()}{openEyes()}}
+{\footnotesize\ttfamily int Eys\+::open\+Eyes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Opens the camera device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap} & Reference to the Video\+Capture object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the camera is opened successfully, -\/1 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEys_a02cd5e473585e7f593301dca36b0b2cc}\label{classEys_a02cd5e473585e7f593301dca36b0b2cc}} 
+\index{Eys@{Eys}!spark@{spark}}
+\index{spark@{spark}!Eys@{Eys}}
+\doxysubsubsection{\texorpdfstring{spark()}{spark()}}
+{\footnotesize\ttfamily cv\+::\+Mat Eys\+::spark (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEys_a4c783f5df2082cb1d9ec9d4ab2eb4f2c}\label{classEys_a4c783f5df2082cb1d9ec9d4ab2eb4f2c}} 
+\index{Eys@{Eys}!cap@{cap}}
+\index{cap@{cap}!Eys@{Eys}}
+\doxysubsubsection{\texorpdfstring{cap}{cap}}
+{\footnotesize\ttfamily cv\+::\+Video\+Capture Eys\+::cap\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Eys/\mbox{\hyperlink{Eys_8hpp}{Eys.\+hpp}}\item 
+src/\+Eys/\mbox{\hyperlink{Eys_8cpp}{Eys.\+cpp}}\end{DoxyCompactItemize}

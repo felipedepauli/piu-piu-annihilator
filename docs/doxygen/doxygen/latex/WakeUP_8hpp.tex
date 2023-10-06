@@ -1,0 +1,55 @@
+\hypertarget{WakeUP_8hpp}{}\doxysection{src/\+Eys/\+Wake\+UP.hpp File Reference}
+\label{WakeUP_8hpp}\index{src/Eys/WakeUP.hpp@{src/Eys/WakeUP.hpp}}
+
+
+The \mbox{\hyperlink{classWakeUP}{Wake\+UP}} Server Header File.  
+
+
+{\ttfamily \#include $<$boost/asio.\+hpp$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Session.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgcodecs/imgcodecs.\+hpp$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}Wake\+UP.\+hpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classWakeUP}{Wake\+UP}}
+\begin{DoxyCompactList}\small\item\em Handle new connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classWakeUP_a747c228c0f66a78e7bfbd8032ecd20d8}{Wake\+UP\+::listening}}()\`{}\`{}\`{}cpp std acceptor\+\_\+ \mbox{\hyperlink{WakeUP_8hpp_aab07c5cc103e2bf3b1169c7d4b365776}{async\+\_\+accept}} (\mbox{[}this\mbox{]}(boost\+::system\+::error\+\_\+code ec, boost\+::asio\+::ip\+::tcp\+::socket socket) \{ if(!ec) \{ std\+::cout$<$$<$ \char`\"{}\mbox{[}Wake\+UP\+::\+Info\mbox{]} New connection accepted\char`\"{}$<$$<$ std\+::endl;auto new\+\_\+session=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{classSession}{Session}} $>$(std\+::move(socket));session\+\_\+threads\+\_\+.\+push\+\_\+back(std\+::make\+\_\+shared$<$ std\+::thread $>$(\mbox{[}new\+\_\+session\mbox{]}() \{ try \{ new\+\_\+session-\/$>$start();\} catch(const std\+::exception \&e) \{ std\+::cerr$<$$<$ \char`\"{}\mbox{[}Wake\+UP\+::\+Info\mbox{]} Client disconnected\char`\"{}$<$$<$ std\+::endl;\} catch(...) \{ std\+::cerr$<$$<$ \char`\"{}\mbox{[}Wake\+UP\+::\+Error\mbox{]} Unknown exception occurred in session\char`\"{}$<$$<$ std\+::endl;\} \}));\} else \{ std\+::cerr$<$$<$ \char`\"{}\mbox{[}Wake\+UP\+::\+Error\mbox{]} Error accepting new connection\+: \char`\"{}$<$$<$ ec.\+message()$<$$<$ std\+::endl;\} listening();\})
+\begin{DoxyCompactList}\small\item\em Starts an asynchronous operation to accept a new connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classWakeUP}{Wake\+UP}} Server Header File. 
+
+This file is part of the Evil Eyes project\+:
+\begin{DoxyItemize}
+\item Website\+: \href{http://www.aincrivelfabrica.com.br}{\texttt{ http\+://www.\+aincrivelfabrica.\+com.\+br}}
+\item Git\+Hub\+: \href{https://github.com/felipedepauli/evil-eyes}{\texttt{ https\+://github.\+com/felipedepauli/evil-\/eyes}}
+\end{DoxyItemize}
+
+License\+: Copyright (C) 2023 Felipe Camargo de Pauli All Rights Reserved.
+
+This source code is provided for viewing purposes only. No part of this source code may be used, modified, distributed, or sublicensed for any purpose without the express written consent of the copyright holder. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{WakeUP_8hpp_aab07c5cc103e2bf3b1169c7d4b365776}\label{WakeUP_8hpp_aab07c5cc103e2bf3b1169c7d4b365776}} 
+\index{WakeUP.hpp@{WakeUP.hpp}!async\_accept@{async\_accept}}
+\index{async\_accept@{async\_accept}!WakeUP.hpp@{WakeUP.hpp}}
+\doxysubsubsection{\texorpdfstring{async\_accept()}{async\_accept()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classWakeUP_a747c228c0f66a78e7bfbd8032ecd20d8}{Wake\+UP\+::listening}}()\`{}\`{}\`{}cpp std acceptor\+\_\+ async\+\_\+accept (\begin{DoxyParamCaption}\item[{\mbox{[}this\mbox{]} (boost\+::system\+::error\+\_\+code ec, boost\+::asio\+::ip\+::tcp\+::socket socket) \{ if(!ec) \{ std\+::cout$<$$<$ \char`\"{}\mbox{[}Wake\+UP\+::\+Info\mbox{]} New connection accepted\char`\"{}$<$$<$ std\+::endl;auto new\+\_\+session=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{classSession}{Session}} $>$(std\+::move(socket));session\+\_\+threads\+\_\+.\+push\+\_\+back(std\+::make\+\_\+shared$<$ std\+::thread $>$(\mbox{[}new\+\_\+session\mbox{]}() \{ try \{ new\+\_\+session-\/$>$start();\} catch(const std\+::exception \&e) \{ std\+::cerr$<$$<$ \char`\"{}\mbox{[}Wake\+UP\+::\+Info\mbox{]} Client disconnected\char`\"{}$<$$<$ std\+::endl;\} catch(...) \{ std\+::cerr$<$$<$ \char`\"{}\mbox{[}Wake\+UP\+::\+Error\mbox{]} Unknown exception occurred in session\char`\"{}$<$$<$ std\+::endl;\} \}));\} else \{ std\+::cerr$<$$<$ \char`\"{}\mbox{[}Wake\+UP\+::\+Error\mbox{]} Error accepting new connection\+: \char`\"{}$<$$<$ ec.\+message()$<$$<$ std\+::endl;\} listening();\}}]{ }\end{DoxyParamCaption})}
+
+
+
+Starts an asynchronous operation to accept a new connection. 
+

@@ -1,0 +1,35 @@
+stateDiagram-v2
+    [*] --> IDLE
+    IDLE --> READY : starting()
+    READY --> KEEPING
+    READY --> RISING
+    READY --> FALLING
+    READY --> MOVING_RIGHT
+    READY --> MOVING_LEFT
+    READY --> SHUTTING_DOWN : shutting_down()
+    KEEPING --> RISING
+    KEEPING --> FALLING
+    KEEPING --> MOVING_RIGHT
+    KEEPING --> MOVING_LEFT
+    KEEPING --> SHUTTING_DOWN : shutting_down()
+    RISING --> KEEPING
+    RISING --> FALLING
+    RISING --> MOVING_RIGHT
+    RISING --> MOVING_LEFT
+    RISING --> SHUTTING_DOWN : shutting_down()
+    FALLING --> KEEPING
+    FALLING --> RISING
+    FALLING --> MOVING_RIGHT
+    FALLING --> MOVING_LEFT
+    FALLING --> SHUTTING_DOWN : shutting_down()
+    MOVING_RIGHT --> KEEPING
+    MOVING_RIGHT --> RISING
+    MOVING_RIGHT --> FALLING
+    MOVING_RIGHT --> MOVING_LEFT
+    MOVING_RIGHT --> SHUTTING_DOWN : shutting_down()
+    MOVING_LEFT --> KEEPING
+    MOVING_LEFT --> RISING
+    MOVING_LEFT --> FALLING
+    MOVING_LEFT --> MOVING_RIGHT
+    MOVING_LEFT --> SHUTTING_DOWN : shutting_down()
+    SHUTTING_DOWN --> [*]

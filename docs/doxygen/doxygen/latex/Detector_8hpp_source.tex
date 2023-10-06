@@ -1,0 +1,34 @@
+\hypertarget{Detector_8hpp_source}{}\doxysection{Detector.\+hpp}
+\label{Detector_8hpp_source}\index{codes/Cortx/Detector.hpp@{codes/Cortx/Detector.hpp}}
+\mbox{\hyperlink{Detector_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ DETECTOR\_HPP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DETECTOR\_HPP}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDetector}{Detector}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classDetector}{Detector}}(\textcolor{keyword}{const}\ std::string\&\ classes\_file,\ \textcolor{keyword}{const}\ std::string\&\ model\_configuration,\ \textcolor{keyword}{const}\ std::string\&\ model\_weights);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ \ \ \ \ cv::Mat\ \mbox{\hyperlink{classDetector_a38414f85898e4188c7d85e1657413469}{annotate\_frame}}(\textcolor{keyword}{const}\ cv::Mat\&\ frame);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classDetector_a145235b570c6bba35ae82328378fa2fe}{labels}};}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ cv::dnn::Net\ \mbox{\hyperlink{classDetector_a5f8f65fb21921573fd7ecb1bb69efa9e}{network}};}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDetector_ac252ee06c12269867746857db4215150}{probability\_minimum}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDetector_a6953acd07a28d13b25afb52df460d9c2}{threshold}};}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ std::vector<cv::Scalar>\ \mbox{\hyperlink{classDetector_aee9283d38c6551947287443892420bfb}{colors}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ cv::Mat\ \mbox{\hyperlink{classDetector_ab5375ec56389d98d5cb1cfde96612871}{blob}};}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DETECTOR\_HPP}}
+
+\end{DoxyCode}
